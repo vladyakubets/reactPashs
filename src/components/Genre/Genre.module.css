@@ -1,0 +1,15 @@
+.buttonClose {
+    height: 4%;
+    width: 100%;
+    transition-duration: 0.4s;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: var(--background-secondary);
+    color: var(--text-primary);
+}
+
+.buttonClose:hover {
+    background-color: var(--background-third);
+    color: var(--text-secondary);
+    cursor: pointer;
+}
