@@ -4,7 +4,7 @@ import {IConfigSearch, IDetails, IMovies} from "../interfaces";
 
 
 const filmsService = {
-    getByID: (id:string):IRes<IDetails> => apiService.get(urls.movies.byId(id)),
+    getByID: (id:string|undefined):IRes<IDetails> => apiService.get(urls.movies.byId(id)),
     searchByQuery: ({query, page}:IConfigSearch):IRes<IMovies> => apiService.get(urls.movies.search(), {params: {query, page}}),
     getAll: (page:string|null):IRes<IMovies> => apiService.get(urls.movies.movies, { params: { page } })
 }

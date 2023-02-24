@@ -1,3 +1,4 @@
+import {ReactNode} from 'react';
 
 
 export interface IMovies {
@@ -26,7 +27,7 @@ export interface IMoviesRes {
 
 
 export interface IConfigSearch {
-    page:string;
+    page:string|null;
     query: string;
 }
 
@@ -50,7 +51,7 @@ export interface IDetails{
     poster_path: string
     production_companies: IDetProdComp[]
     production_countries:IDetProdCountry[]
-    release_date: Date|string
+    release_date: ReactNode|string
     revenue: number
     runtime:number
     spoken_languages: IDetLang
@@ -87,4 +88,11 @@ export interface IGenre {
 export interface IDetGenres {
     id: number
     name: string|any
+}
+
+export interface IProdComp {
+    id: number,
+    logo_path: null|string
+    name: string
+    origin_country: string
 }

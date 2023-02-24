@@ -7,7 +7,7 @@ import {AxiosError} from "axios";
 interface IState {
     films:IMoviesRes[];
     searchFilms: IMoviesRes[];
-    selectedQuery: { name: string } | null;
+    selectedQuery: { name: string }
     errors: null|string|unknown;
     totalPages: number;
     filmDetails: IDetails | null
@@ -17,7 +17,7 @@ interface IState {
 const initialState: IState = {
     films:[],
     searchFilms: [],
-    selectedQuery: null,
+    selectedQuery: {name: ''},
     errors: null,
     totalPages: 1,
     filmDetails: null
@@ -37,7 +37,7 @@ const getAll = createAsyncThunk<IMovies, {page:string|null}>(
     }
 );
 
-const getById = createAsyncThunk<IDetails, {id:string}>(
+const getById = createAsyncThunk<IDetails, {id:string|undefined}>(
     'filmSlice/getById',
     async ({id}, {rejectWithValue})=>{
         try {
@@ -52,7 +52,7 @@ const getById = createAsyncThunk<IDetails, {id:string}>(
 
 
 
-const search = createAsyncThunk<IMovies, {page:string, query: {name:string}}>(
+const search = createAsyncThunk<IMovies, {page:string|null, query: {name:string}}>(
     'filmSlice/search',
     async (params, thunkAPI) => {
         try {

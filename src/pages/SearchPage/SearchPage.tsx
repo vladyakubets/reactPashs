@@ -1,9 +1,10 @@
 import {FC} from 'react';
+import {QueryFilms} from "../../components";
 
 const SearchPage:FC = () => {
     return (
         <div>
-            SearchPage
+            <QueryFilms/>
         </div>
     );
 };
