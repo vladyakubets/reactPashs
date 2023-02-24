@@ -1,7 +1,7 @@
-import {Header, Sidebar} from "../components";
+import { Header, Sidebar } from "../components";
 // import {Outlet} from "react-router-dom";
-import {FC, ReactNode} from "react";
-import {Outlet} from "react-router-dom";
+import { FC, ReactNode } from "react";
+import { Outlet } from "react-router-dom";
 
 export interface MainLayoutProps {
     switchTheme: () => void;
@@ -10,14 +10,14 @@ export interface MainLayoutProps {
 }
 
 
-const MainLayout: FC<MainLayoutProps> = ({switchTheme, theme, children}) => {
+const MainLayout: FC<MainLayoutProps> = ({ switchTheme, theme }) => {
     return (
         <div>
-            <Header switchTheme={switchTheme} theme={theme}/>
-            <Sidebar>{children}</Sidebar>
-            <Outlet/>
+            <Header switchTheme={switchTheme} theme={theme} />
+            <Sidebar />
+            <Outlet />
         </div>
     );
 };
 
-export {MainLayout};
+export { MainLayout };
